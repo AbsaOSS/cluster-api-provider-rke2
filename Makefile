@@ -519,7 +519,7 @@ docker-build-and-push-rke2-bootstrap:
 	DOCKER_BUILDKIT=1 BUILDX_BUILDER=$(MACHINE) docker buildx build \
 			--platform $(TARGET_PLATFORMS) \
 			--push \
-			--sbom=true \
+			--sbom=false \
 			--attest type=provenance,mode=max \
 			--iidfile=$(IID_FILE) \
 			--build-arg builder_image=$(GO_CONTAINER_IMAGE) \
@@ -533,7 +533,7 @@ docker-build-and-push-rke2-controlplane:
 	DOCKER_BUILDKIT=1 BUILDX_BUILDER=$(MACHINE) docker buildx build \
 			--platform $(TARGET_PLATFORMS) \
 			--push \
-			--sbom=true \
+			--sbom=false \
 			--attest type=provenance,mode=max \
 			--iidfile=$(IID_FILE) \
 			--build-arg builder_image=$(GO_CONTAINER_IMAGE) \
